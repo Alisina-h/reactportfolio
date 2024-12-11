@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/Alisina-h/reactportfolio.git/static/css/main.dfc6e7b2.css",
+    "main.js": "/Alisina-h/reactportfolio.git/static/js/main.c2c5c626.js",
+    "static/media/bil2hero (1).jpg": "/Alisina-h/reactportfolio.git/static/media/bil2hero (1).dfe5a1b4931b406fafe2.jpg",
+    "index.html": "/Alisina-h/reactportfolio.git/index.html",
+    "main.dfc6e7b2.css.map": "/Alisina-h/reactportfolio.git/static/css/main.dfc6e7b2.css.map",
+    "main.c2c5c626.js.map": "/Alisina-h/reactportfolio.git/static/js/main.c2c5c626.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.dfc6e7b2.css",
+    "static/js/main.c2c5c626.js"
+  ]
+}
