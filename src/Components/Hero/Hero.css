@@ -1,0 +1,196 @@
+.hero-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.hero-content {
+    flex: 1;
+}
+
+.hero-content h2 {
+    position: relative; /* Viktigt för att kunna använda pseudo-element på denna */
+    font-size: 3.8rem;
+    font-weight: 600;
+    line-height: 5rem;
+    margin-bottom: 1rem;
+    margin-left: 1rem;
+    color: white; /* Gör texten vit för att kontrastera mot bakgrunden */
+}
+
+/* Bakgrund före text */
+.hero-content h2::before,
+.hero-content h2::after {
+    content: ""; /* Nödvändigt för pseudo-element */
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(40deg, #a993fc 10%, #7e61e7 5%); /* Bakgrundsgradient */
+    filter: blur(100px); /* Större suddighet */
+    z-index: -1; /* Se till att bakgrunden ligger bakom texten */
+    border-radius: 50%; /* Gör bakgrunden rundad */
+}
+
+.hero-content p {
+    width: 80%;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 2rem;
+    margin-left: 1rem;
+}
+
+.hero-img {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 5rem;
+}
+
+.hero-img > div {
+    display: flex;
+    align-items: flex-end;
+    gap: 2rem;
+}
+
+.hero-img > div > .img {
+    width: 25re;
+    transition: all 0.3s ease;
+}
+
+.imgstor {
+    height: 300px;
+    width: 100%;
+    border-radius: 20%;
+}
+
+.tech-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 5rem;
+    height: 5rem;
+    border-radius: 0.65rem;
+    border: 1.5px solid white;
+}
+
+/* Media query för skärmar upp till 1025px */
+@media (max-width: 1025px) {
+    .hero-content h2 {
+        font-size: 3rem;
+        line-height: 4rem;
+    }
+
+    .hero-content p {
+        font-size: 0.9rem;
+        line-height: 1.6rem;
+    }
+
+    .hero-img > div > .img {
+        width: 20rem;
+    }
+    .tech-icon {
+        width: 4rem;
+        height: 4rem;
+    }
+
+    .tech-icon .img {
+        width: 2.5rem;
+    }
+}
+
+/* Media query för skärmar upp till 768px */
+@media (max-width: 768px) {
+    .hero-container {
+        flex-direction: column; /* Gör om till kolumnlayout */
+    }
+
+   
+    .hero-img {
+        margin: 2rem 0 2rem 0;
+     
+    }   
+
+    .hero-content h2 {
+        margin-top: 3rem;
+    }
+
+    .hero-content h2,
+    .hero-content p {
+        width: auto;
+        text-align: center;
+    }
+
+   
+}
+
+
+
+    @media(max-width : 1025px){
+        .hero-content h2{
+            font-size: 3rem;
+            line-height: 4rem;
+
+
+        }
+
+        .hero-content p{
+            font-size: 1.5rem;
+            line-height: 1.6rem;
+        }
+
+        .hero-img > div > .img{
+            width: 20rem;
+
+        }
+        .tech-icon{
+            width: 4rem;
+            height: 4rem;
+            border: none;
+        }
+
+        .tech-icon .img{
+            width: 2.5rem;
+        }
+
+    }  
+
+    @media(max-width : 600px){
+        f
+        .hero-content h2{
+            font-size: 2.2rem;
+            line-height: 3rem;
+        }
+
+        .hero-content p {
+            font-size: 0.8rem;
+            line-height: 1.3rem;
+
+        }
+
+        .hero-img{
+            gap : 1rem;
+
+        }
+
+        .hero-img > div{
+            gap :1rem;
+        }
+
+        .hero-img > div > .img{
+            width: 16rem;
+
+        }
+
+        .tech-icon{
+           border: none;
+        }
+
+        .tech-icon .img{
+            width: 2rem;
+        }
+
+    }

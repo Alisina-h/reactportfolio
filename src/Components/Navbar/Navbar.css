@@ -1,0 +1,143 @@
+.nav-wrapper {
+    background-color: rgb(0, 0, 0, 0.1);
+    padding: 0.5rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 30;
+    backdrop-filter: blur(50px);
+}
+
+.nav-content {
+    display: flex;
+    align-items: center;
+    padding: 1rem 2rem;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.nav-content h2 {
+    margin-right: auto;  /* Detta gör att h2 taggen hålls åt vänster */
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+}
+
+/* Menyn är dolda på små skärmar */
+.nav-content ul {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    list-style: none;
+}
+
+/* Detta kommer att gömma menyn på små skärmar (med hjälp av active-klassen kommer den att visas) */
+.nav-content ul.active {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: linear-gradient(90deg, #a993fc 0%, #7e61e7 100%);
+    width: 200px;
+    height: 100vh;
+    padding-top: 50px;
+    transform: translateX(0);
+    transition: transform 0.3s ease-in-out;
+}
+
+.nav-content li {
+    margin: 0 1.5rem;
+}
+
+.menu-item {
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #fff;
+    position: relative;
+    cursor: pointer;
+}
+
+.contact-btn {
+    background-color: #ff6600;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.contact-btn:hover {
+    background-color: #e55a00;
+}
+
+.menu-item::before {
+    content : " ";
+    width: 2rem;
+    height: 0.2rem;
+    background: linear-gradient(90deg, #a993fc 0%, #7e61e7 100%);
+    border-radius: 0.5rem;
+    position: absolute;
+    bottom: -0.6rem;
+    opacity: 0;
+    transform: translateX(-1.5rem);
+    transition: all 0.3s ease;
+}
+
+.menu-item:hover::before {
+    width: 100%;
+    transform: translateX(0);
+    opacity: 1;
+}
+
+/* Hamburgarikonen */
+.menu-btn {
+    width: 2.5rem;
+    height: 2.5rem;
+    font-size: 1.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 0.4rem;
+    color: #fff;
+    background: linear-gradient(90deg, #a993fc 0%, #7e61e7 100%);
+    cursor: pointer;
+    transition: all 0.4s ease;
+    display: none; /* Döljer hamburgarikonen på större skärmar */
+}
+
+.menu-btn:hover {
+    color: #a993fe;
+    background: #000;
+    border: 1px solid #a993fe;
+}
+
+/* Visa hamburgarikonen på skärmar som är mindre än 769px */
+@media(max-width: 769px) {
+    .menu-btn {
+        display: block;
+    }
+
+   
+    .menu-item{
+        font-size: 2rem;
+        
+    }
+    .nav-content ul {
+        display: none;
+    }
+
+    .nav-content ul li{
+        padding: 1.5rem;
+    }
+
+    .contact-btn{
+        padding: 2rem;
+        font-size: 1.5rem;
+        margin-right:1rem ;
+    }
+
+  
+}
